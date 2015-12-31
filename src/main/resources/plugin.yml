@@ -1,0 +1,25 @@
+name: MinEmojis
+main: br.net.fabiozumbi12.MinEmojis.MinEmojis
+version: 1.2
+author: FabioZumbi12
+description: Send real emojis to chat.
+commands:
+  MinEmojis:
+    description: "Main command for MinEmojis."
+    aliases: [emo, emojis, emoji]
+permissions:
+  minemojis.*:
+    description: "All MinEmojis permissions."
+    default: op
+    children:
+      minemojis.reload: true
+      minemojis.player: true
+  minemojis.player:
+    description: "All player MinEmojis permissions."
+    default: false
+    children:
+      minemojis.install: true
+      minemojis.download: true
+      minemojis.enable: true
+      minemojis.list: true
+      minemojis.emoji.all: true

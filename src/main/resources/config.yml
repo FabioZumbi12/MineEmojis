@@ -1,0 +1,18 @@
+download-help-lines:
+- '&6[&2MinEmojis&6] &aInstallation Guide:'
+- '&7- Download from this link: &6http://tinyurl.com/p3bhzrx'
+- '&7- Copy the downloaded file to your &6.minecraft/resourcepacks'
+- '&7- Activate the emojis on &6Options&7>&6Resource Packs'
+- '&7- See all available emojis using &6/emojis list'
+strings:
+  plugin-tag: '&6[&2MinEmojis&6] &7'
+  default-color: '&7'
+  shortcut: '&bShortcut: &7'
+  noperm: '&cYou dont have permission to use this command!'
+  installing: '&7Wait until the installation is completed...'
+  installed: '&7Emojis installed with success! Now use &6/emojis list &7to see all
+    available emojis for you.'
+  disabling: '&7To see our emojis you need to install fist. We will disable for you!'
+  error: '&7Theres an error on install emojis and we will disable for you!'
+  emojis.enabled: "&7Emojis enabled for you!"
+  emojis.disabled: "&7Emojis disabled for you!"
