@@ -1,7 +1,8 @@
 name: MinEmojis
 main: br.net.fabiozumbi12.MinEmojis.MinEmojis
-version: 1.2
+version: 1.4.0
 author: FabioZumbi12
+softdepend: [ResourcePackApi]
 description: Send real emojis to chat.
 commands:
   MinEmojis:
@@ -14,6 +15,7 @@ permissions:
     children:
       minemojis.reload: true
       minemojis.player: true
+      minemojis.setsign: true
   minemojis.player:
     description: "All player MinEmojis permissions."
     default: false
@@ -23,3 +25,4 @@ permissions:
       minemojis.enable: true
       minemojis.list: true
       minemojis.emoji.all: true
+      minemojis.placesign: true

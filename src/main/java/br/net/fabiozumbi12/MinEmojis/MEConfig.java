@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -38,6 +40,70 @@ public class MEConfig {
 			disFile.save(file);
 		} catch (IOException e) {
 			MELogger.severe("Error on save disabled.yml file!");
+			e.printStackTrace();
+		}
+	}
+	
+	private void loadConfigMojis(){
+		MEYaml disFile = new MEYaml();
+		File file = new File(plugin.getDataFolder(), "emojis.yml");
+		if(!file.exists()) {
+			MELogger.info("Creating new emojis.yml ...");
+			try {
+				plugin.saveResource("emojis.yml", false);
+				disFile = inputLoader(plugin.getResource("emojis.yml")); ;
+			} catch (Exception e) {
+				MELogger.severe("Error on creating emojis.yml file!");
+				e.printStackTrace();
+			}
+		} else {
+			try {
+				disFile.load(file);	
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		HashMap<List<String>, String> NewEmojis = new HashMap<List<String>, String>();
+        
+        for (List<String> aliases:MinEmojis.emojis.keySet()){
+        	List<String> newAliases = new ArrayList<String>();
+        	Iterator<String> it = aliases.iterator();
+        	while (it.hasNext()){
+        		String alias = it.next();
+        		if (alias.startsWith(":") && alias.endsWith(":")){
+        			if (!disFile.contains("emoji-aliases."+alias.replace(":", ""))){
+        				disFile.set("emoji-aliases."+alias.replace(":", ""), (String)"");
+            		} else {     
+            			newAliases.add(alias);
+            			for (String nAlias:disFile.getString("emoji-aliases."+alias.replace(":", "")).split(",")){
+            				if (!nAlias.isEmpty()){
+            					newAliases.add(nAlias.replace(" ", ""));
+            				}            				
+            			}            			
+            		}
+        		}        		        		
+        	}
+        	if (!newAliases.isEmpty()){        		
+        		String Symbol = MinEmojis.emojis.get(aliases);
+        		NewEmojis.put(newAliases, Symbol);
+            }        	
+        }     
+        
+        if (!NewEmojis.isEmpty()){
+        	MinEmojis.emojis.clear();
+        	MinEmojis.emojis.putAll(NewEmojis);
+        }
+        
+        try {
+        	disFile.options().header("--------------------- Emojis aliases configuration ---------------------\n"
+        			+ "Remember to always add the ' ' around your aliases.\n"
+        			+ "The plugin may remove the ' ' or add quotation marks.\n"
+        			+ "If you want to add more than one alias use commas, like the emoji 'sob'.\n"
+        			+ "-------------------------------------------------------------------------\n");
+			disFile.save(file);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -106,6 +172,9 @@ public class MEConfig {
         for (String key:config.getKeys(false)){    
         	plugin.getConfig().set(key, config.get(key));
         }  
+        
+        //set aliases from configuration     
+        loadConfigMojis();
         
         plugin.saveConfig();
         //--------------------------------------------------------------------------//
