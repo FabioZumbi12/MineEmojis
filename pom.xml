@@ -4,25 +4,19 @@
   <artifactId>MinEmojis</artifactId>
   <packaging>jar</packaging>
   <name>MinEmojis</name>
-  <version>1.4.0</version>
+  <version>${pluginVersion}</version>
   <dependencies>
-        <!-- <dependency>
+        <dependency>
           <groupId>org.spigotmc</groupId>
           <artifactId>spigot-api</artifactId>
-          <version>1.8.8-R0.1-SNAPSHOT</version>
+          <version>${mineVersion}</version>
         </dependency>
         
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>1.8.3-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>-->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.10-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+          <groupId>org.spigotmc</groupId>
+          <artifactId>spigot-api</artifactId>
+          <version>${mineVersion}</version>
+          <classifier>javadoc</classifier>
         </dependency>
         
         <dependency>
@@ -42,9 +36,17 @@
 		<url>https://repo.inventivetalent.org/content/groups/public/</url>
 	</repository>
   </repositories>
+  
+  <scm>
+     <connection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</connection>
+     <developerConnection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</developerConnection>
+     <url>https://github.com/FabioZumbi12/MinEmojis/tree/master</url>
+     <tag>${project.version}</tag>
+  </scm>
+  
   <build>
-    <finalName>${project.name}</finalName>
-    <defaultGoal>clean package install</defaultGoal>
+    <finalName>${project.name}-b${buildNumber}</finalName>
+    <defaultGoal>clean install</defaultGoal>
     <plugins>
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -55,6 +57,33 @@
           <target>1.7</target>
         </configuration>
       </plugin>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>create</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <format>${project.version}-b{0,number}</format>
+          <items>
+            <item>buildNumber0</item>
+          </items>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  	<mineVersion>1.11.2-R0.1-SNAPSHOT</mineVersion>  	
+    <pluginVersion>1.4.1</pluginVersion>
+  </properties>
 </project>
