@@ -2,7 +2,7 @@
 Real emojis on your chat.
 
 ## Available versions:
-Spigot: https://www.spigotmc.org/resources/uchat.23767/
+Spigot: https://www.spigotmc.org/resources/minemojis.15969/
 
 ## Source:
 The source is available on GitHub: https://github.com/FabioZumbi12/MineEmojis
