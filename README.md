@@ -8,7 +8,7 @@ Spigot: https://www.spigotmc.org/resources/minemojis.15969/
 The source is available on GitHub: https://github.com/FabioZumbi12/MineEmojis
 
 ## Dev Builds:
-Dev build on Jenkins: [![Build Status](http://158.69.121.149:8080/buildStatus/icon?job=MineEmojis)](http://158.69.121.149:8080/job/MineEmojis/)
+Dev build on Jenkins: [![Build Status](http://areaz12server.net.br:8080/buildStatus/icon?job=MineEmojis)](http://areaz12server.net.br:8080/job/MineEmojis/)
 
 ## Jenkins Builds:
 The jar buils are diferent of jenkins builds.
