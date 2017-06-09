@@ -25,8 +25,7 @@ public class MEYaml extends YamlConfiguration {
   public void load(File file) throws FileNotFoundException, IOException,   InvalidConfigurationException {
     load(new FileInputStream(file));
   }
-
-  @Override
+  
   public void load(InputStream stream) throws IOException, InvalidConfigurationException {
     Validate.notNull(stream, "Stream cannot be null");
 

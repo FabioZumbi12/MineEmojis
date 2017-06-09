@@ -1,6 +1,6 @@
 name: MinEmojis
 main: br.net.fabiozumbi12.MinEmojis.MinEmojis
-version: 1.4.0
+version: 1.4.2
 author: FabioZumbi12
 softdepend: [ResourcePackApi]
 description: Send real emojis to chat.

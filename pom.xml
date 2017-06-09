@@ -83,7 +83,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  	<mineVersion>1.11.2-R0.1-SNAPSHOT</mineVersion>  	
+  	<mineVersion>1.12-R0.1-SNAPSHOT</mineVersion>  	
     <pluginVersion>1.4.1</pluginVersion>
   </properties>
 </project>
