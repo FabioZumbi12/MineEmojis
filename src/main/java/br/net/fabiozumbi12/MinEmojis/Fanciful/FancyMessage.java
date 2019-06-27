@@ -26,12 +26,12 @@ import com.google.gson.stream.JsonWriter;
 import br.net.fabiozumbi12.MinEmojis.Fanciful.util.ArrayWrapper;
 import br.net.fabiozumbi12.MinEmojis.Fanciful.util.Reflection;
 
-import org.bukkit.Achievement;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
 import org.bukkit.Statistic.Type;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -233,9 +233,9 @@ public class FancyMessage implements JsonRepresentedObject, Cloneable, Iterable<
 	 * @param which The achievement to display.
 	 * @return This builder instance.
 	 */
-	public FancyMessage achievementTooltip(final Achievement which) {
+	public FancyMessage achievementTooltip(final Advancement which) {
 		try {
-			Object achievement = Reflection.getMethod(Reflection.getOBCClass("CraftStatistic"), "getNMSAchievement", Achievement.class).invoke(null, which);
+			Object achievement = Reflection.getMethod(Reflection.getOBCClass("CraftStatistic"), "getNMSAchievement", Advancement.class).invoke(null, which);
 			return achievementTooltip((String) Reflection.getField(Reflection.getNMSClass("Achievement"), "name").get(achievement));
 		} catch (IllegalAccessException e) {
                         Bukkit.getLogger().log(Level.WARNING, "Could not access method.", e);
