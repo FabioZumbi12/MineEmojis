@@ -1,6 +1,8 @@
 package br.net.fabiozumbi12.MinEmojis;
 
 import br.net.fabiozumbi12.MinEmojis.Fanciful.FancyMessage;
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
@@ -15,12 +17,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.inventivetalent.rpapi.ResourcePackAPI;
 
+import javax.xml.bind.DatatypeConverter;
 import java.util.*;
 
 public class MinEmojis extends JavaPlugin implements Listener {
@@ -203,9 +207,9 @@ public class MinEmojis extends JavaPlugin implements Listener {
             if (args[0].equalsIgnoreCase("install") && sender instanceof Player && sender.hasPermission("minemojis.install")) {
                 Player p = (Player) sender;
                 if (getBukkitVersion() >= 188) {
-                    p.setResourcePack("https://dl.dropboxusercontent.com/s/mggt0usjvrrvgj5/MinEmojis.zip");
+                    p.setResourcePack("https://www.dropbox.com/s/mggt0usjvrrvgj5/MinEmojis.zip?dl=1");
                 } else {
-                    ResourcePackAPI.setResourcepack(p, "https://dl.dropboxusercontent.com/s/mggt0usjvrrvgj5/MinEmojis.zip", "minemojis");
+                    ResourcePackAPI.setResourcepack(p, "https://www.dropbox.com/s/mggt0usjvrrvgj5/MinEmojis.zip?dl=1");
                 }
                 installing.add(p.getName());
             }
@@ -299,6 +303,18 @@ public class MinEmojis extends JavaPlugin implements Listener {
             }
         }
         return msg;
+    }
+
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
+    public void onPlayerJoin(PlayerJoinEvent event){
+        Player p = event.getPlayer();
+        if (config.getBool("config.resourcepack-onplayerjoin")) {
+            if (getBukkitVersion() >= 188) {
+                p.setResourcePack("https://www.dropbox.com/s/mggt0usjvrrvgj5/MinEmojis.zip?dl=1");
+            } else {
+                ResourcePackAPI.setResourcepack(p, "https://www.dropbox.com/s/mggt0usjvrrvgj5/MinEmojis.zip?dl=1");
+            }
+        }
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)

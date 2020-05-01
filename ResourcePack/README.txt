@@ -2,4 +2,6 @@ You can feel free to modify and distribute this resource pack as you wish, or in
 
 Feel free to delete this README.txt, and thank you for downloading!
 
+Plugin page: https://www.spigotmc.org/resources/minemojis.15969/
+
 ~FabioZumbi12

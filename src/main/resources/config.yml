@@ -1,3 +1,5 @@
+config:
+  resourcepack-onplayerjoin: true
 download-help-lines:
   - '&6[&2MinEmojis&6] &aInstallation Guide:'
   - '&7- Download from this link: &6http://tinyurl.com/p3bhzrx'

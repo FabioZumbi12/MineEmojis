@@ -1,8 +1,7 @@
 {
-  "pack": {
-    "pack_format": 1,
-    "game_version": "1.8",
-    "description": "䰀䰂䰄䰆 Emojis 䰈䰊䰌䰏 - Use com o plugin MinEmojis",
-    "consists": "Resourcepack para usar Emojis reais no seu Mine*"
+	"pack": {
+		"pack_format": 5,
+		"description": "䰀䰂䰄䰆 Emojis 䰈䰊䰌䰏 - Use com o plugin MinEmojis",
+		"consists": "Resourcepack para usar Emojis reais no seu Mine*"
   }
 }

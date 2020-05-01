@@ -1,7 +1,7 @@
 This copyright notice applies to the following files in this folder:
-unicode_page_89.png
+unicode_page_89.png - https://unicode-table.com/pt/#4C00
 
-Copyright (c) 2015 FabioZumbi12
+Copyright (c) 2020 FabioZumbi12
 
 You may redistribute or modify these resources as you wish, but this copyright notice must be distributed alongside them.
 

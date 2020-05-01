@@ -185,6 +185,10 @@ public class MEConfig {
         //--------------------------------------------------------------------------//
     }
 
+    public boolean getBool(String key) {
+        return config.getBoolean(key);
+    }
+
     public List<String> getList(String key) {
         return config.getStringList(key);
     }
