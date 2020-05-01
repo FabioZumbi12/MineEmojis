@@ -1,89 +1,69 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>MinEmojis</groupId>
-  <artifactId>MinEmojis</artifactId>
-  <packaging>jar</packaging>
-  <name>MinEmojis</name>
-  <version>${pluginVersion}</version>
-  <dependencies>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>MinEmojis</groupId>
+    <artifactId>MinEmojis</artifactId>
+    <packaging>jar</packaging>
+    <name>MinEmojis</name>
+    <version>1.4.1</version>
+    <dependencies>
         <dependency>
-          <groupId>org.spigotmc</groupId>
-          <artifactId>spigot-api</artifactId>
-          <version>${mineVersion}</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${mineVersion}</version>
         </dependency>
-        
+
         <dependency>
-          <groupId>org.spigotmc</groupId>
-          <artifactId>spigot-api</artifactId>
-          <version>${mineVersion}</version>
-          <classifier>javadoc</classifier>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${mineVersion}</version>
+            <classifier>javadoc</classifier>
         </dependency>
-        
+
         <dependency>
-		    <groupId>org.inventivetalent.resourcepackapi</groupId>
-		    <artifactId>api</artifactId>
-	    	<version>2.2.1</version>
-	    </dependency>
-	
-        </dependencies>
-  <repositories>
-     <repository>
+            <groupId>org.inventivetalent.resourcepackapi</groupId>
+            <artifactId>api</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+    </dependencies>
+    <repositories>
+        <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-     </repository>
-     <repository>
-		<id>inventive-repo</id>
-		<url>https://repo.inventivetalent.org/content/groups/public/</url>
-	</repository>
-  </repositories>
-  
-  <scm>
-     <connection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</connection>
-     <developerConnection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</developerConnection>
-     <url>https://github.com/FabioZumbi12/MinEmojis/tree/master</url>
-     <tag>${project.version}</tag>
-  </scm>
-  
-  <build>
-    <finalName>${project.name}-b${buildNumber}</finalName>
-    <defaultGoal>clean install</defaultGoal>
-    <plugins>
-        <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-      
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>create</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <format>${project.version}-b{0,number}</format>
-          <items>
-            <item>buildNumber0</item>
-          </items>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  	<mineVersion>1.12-R0.1-SNAPSHOT</mineVersion>  	
-    <pluginVersion>1.4.1</pluginVersion>
-  </properties>
+        </repository>
+        <repository>
+            <id>inventive-repo</id>
+            <url>https://repo.inventivetalent.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <scm>
+        <connection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</connection>
+        <developerConnection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</developerConnection>
+        <url>https://github.com/FabioZumbi12/MinEmojis/tree/master</url>
+        <tag>${project.version}</tag>
+    </scm>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <defaultGoal>clean install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mineVersion>1.15.2-R0.1-SNAPSHOT</mineVersion>
+    </properties>
 </project>

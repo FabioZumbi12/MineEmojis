@@ -1,9 +1,9 @@
 download-help-lines:
-- '&6[&2MinEmojis&6] &aInstallation Guide:'
-- '&7- Download from this link: &6http://tinyurl.com/p3bhzrx'
-- '&7- Copy the downloaded file to your &6.minecraft/resourcepacks'
-- '&7- Activate the emojis on &6Options&7>&6Resource Packs'
-- '&7- See all available emojis using &6/emojis list'
+  - '&6[&2MinEmojis&6] &aInstallation Guide:'
+  - '&7- Download from this link: &6http://tinyurl.com/p3bhzrx'
+  - '&7- Copy the downloaded file to your &6.minecraft/resourcepacks'
+  - '&7- Activate the emojis on &6Options&7>&6Resource Packs'
+  - '&7- See all available emojis using &6/emojis list'
 strings:
   plugin-tag: '&6[&2MinEmojis&6] &7'
   default-color: '&7'
