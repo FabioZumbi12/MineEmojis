@@ -1,8 +1,12 @@
 package br.net.fabiozumbi12.MinEmojis;
 
-import br.net.fabiozumbi12.MinEmojis.Fanciful.FancyMessage;
-import com.google.common.base.Charsets;
-import com.google.common.hash.Hashing;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
@@ -24,8 +28,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.inventivetalent.rpapi.ResourcePackAPI;
 
-import javax.xml.bind.DatatypeConverter;
-import java.util.*;
+import br.net.fabiozumbi12.MinEmojis.Fanciful.FancyMessage;
 
 public class MinEmojis extends JavaPlugin implements Listener {
 
