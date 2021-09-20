@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile="E:/Downloads/ResourcePackAPI_v2.2.1_1.jar" -DgroupId="org.inventivetalent.resourcepackapi" -DartifactId="api" -Dversion="2.2.1" -Dpackaging="jar" -DlocalRepositoryPath="C:/Users/manoo/git/MineEmojis/local-maven-repo"
