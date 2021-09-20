@@ -19,29 +19,39 @@
             <version>${mineVersion}</version>
             <classifier>javadoc</classifier>
         </dependency>
-
-        <dependency>
+		
+		<dependency>
+			<groupId>com.github.InventivetalentDev.ResourcePackAPI</groupId>
+			<artifactId>API</artifactId>
+			<version>master-SNAPSHOT</version>
+		</dependency>
+		
+        <!-- <dependency>
             <groupId>org.inventivetalent.resourcepackapi</groupId>
             <artifactId>api</artifactId>
             <version>2.2.1</version>
-        </dependency>
+        </dependency> -->
 
     </dependencies>
     <repositories>
+    	<repository>
+	    	<id>jitpack.io</id>
+	    	<url>https://jitpack.io</url>
+		</repository>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
-        <repository>
+        <!-- <repository>
             <id>inventive-repo</id>
             <url>https://repo.inventivetalent.org/content/groups/public/</url>
-        </repository>
+        </repository> -->
     </repositories>
 
     <scm>
-        <connection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</connection>
-        <developerConnection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</developerConnection>
-        <url>https://github.com/FabioZumbi12/MinEmojis/tree/master</url>
+        <connection>scm:git:git@github.com:Sneakyguy6/MinEmojis.git</connection>
+        <developerConnection>scm:git:git@github.com:Sneakyguy6/MinEmojis.git</developerConnection>
+        <url>https://github.com/Sneakyguy6/MinEmojis/tree/master</url>
         <tag>${project.version}</tag>
     </scm>
 
