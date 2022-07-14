@@ -19,43 +19,65 @@
             <version>${mineVersion}</version>
             <classifier>javadoc</classifier>
         </dependency>
-
-        <dependency>
+		
+		<!-- <dependency>
+			<groupId>com.github.InventivetalentDev.ResourcePackAPI</groupId>
+			<artifactId>API</artifactId>
+			<version>master-SNAPSHOT</version>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>org.inventivetalent.resourcepackapi</groupId>
+            <artifactId>api</artifactId>
+            <version>2.2.1</version>
+			<!-- <scope>system</scope>
+			<systemPath>${project.basedir}/ResourcePackAPI_v2.2.1_1.jar</systemPath> -->
+		</dependency>
+		
+        <!-- <dependency>
             <groupId>org.inventivetalent.resourcepackapi</groupId>
             <artifactId>api</artifactId>
             <version>2.2.1</version>
-        </dependency>
+        </dependency> -->
 
     </dependencies>
     <repositories>
+    	<repository>
+        	<id>local-maven-repo</id>
+        	<url>file:///${project.basedir}/local-maven-repo</url>
+   		</repository>
+    	<!-- <repository>
+	    	<id>jitpack.io</id>
+	    	<url>https://jitpack.io</url>
+		</repository> -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
-        <repository>
+        <!-- <repository>
             <id>inventive-repo</id>
             <url>https://repo.inventivetalent.org/content/groups/public/</url>
-        </repository>
+        </repository> -->
     </repositories>
 
     <scm>
-        <connection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</connection>
-        <developerConnection>scm:git:git@github.com:FabioZumbi12/MinEmojis.git</developerConnection>
-        <url>https://github.com/FabioZumbi12/MinEmojis/tree/master</url>
+        <connection>scm:git:git@github.com:Sneakyguy6/MinEmojis.git</connection>
+        <developerConnection>scm:git:git@github.com:Sneakyguy6/MinEmojis.git</developerConnection>
+        <url>https://github.com/Sneakyguy6/MinEmojis/tree/master</url>
         <tag>${project.version}</tag>
     </scm>
 
     <build>
-        <finalName>${project.name}-${project.version}-b${BUILD_NUMBER}a</finalName>
+        <finalName>${project.name}-${project.version}-b${buildNumber}a</finalName>
         <defaultGoal>clean install</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -64,6 +86,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mineVersion>1.15.2-R0.1-SNAPSHOT</mineVersion>
+        <mineVersion>1.17.1-R0.1-SNAPSHOT</mineVersion>
+        <buildNumber>1</buildNumber>
     </properties>
 </project>
